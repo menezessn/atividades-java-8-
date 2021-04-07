@@ -9,7 +9,7 @@ public class atividade1 {
 		
 		int []pecas = new int[10];
 		double []valor = new double[10];
-		double [] total = new double[10];
+		double total = 0;
 		int y = 0;
 		
 		for(int x = 0 ;x <10 ; x++) {
@@ -18,6 +18,7 @@ public class atividade1 {
 			pecas[x] = grava.nextInt();
 			System.out.println("Digite o preço das peças do vendedor " + (x+1));
 			valor[x] = grava.nextDouble();
+			total+=pecas[x];
 			
 		}
 		
@@ -26,6 +27,8 @@ public class atividade1 {
 			System.out.println("O vendedor " + (i+1) + " vendeu "+ pecas[i]+ " peça(s),  totalizando R$ " + (valor[i]*pecas[i] ) );
 			
 		}
+		
+		System.out.println("O total de peças vendidas foi: " + total);
 
 	}
 
