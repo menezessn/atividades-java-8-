@@ -1,0 +1,75 @@
+package atividade3;
+
+import java.util.Scanner;
+
+public class atividade3 {
+
+	public static void main(String[] args) {
+		Scanner grava = new Scanner (System.in);
+		
+		double []preco = new double [5];
+		int [] cod = new int [5];
+		float soma = 0;
+		float divisao = 0;
+		
+		int contmenor = 0, contmedio= 0, contmaior = 0 ;
+		
+		
+		for(int x = 0 ; x<5 ; x++) {
+			
+			System.out. println("Digite o valor do produto " +(x+1) );
+			preco[x] = grava.nextDouble();
+			System.out. println("Digite o código do produto " +(x+1) );
+			cod[x] = grava.nextInt();
+			
+			if(preco[x]<50) {
+				
+				System.out.println("Preço menor que R$50,00");
+				contmenor++;
+			}
+			if(preco[x]>=50 && preco[x]<=100) {
+				
+				System.out.println("Preço entre R$50,00 e R$100,00");
+				contmedio++;
+			}
+			if(preco[x]>100) {
+				
+				System.out.println("Preço maior que R$100,00");
+				contmaior++;
+				
+			}
+			}
+			
+			System.out.println(contmenor + " produtos custam menos que R$50,00");
+			System.out.print("\nOs códigos dos produtos que custam entre R$50,00 e R$100,00 são: ");
+			
+			for(int y=0 ; y<5; y++) {
+				
+				if(preco[y] >=50 && preco[y]<=100) {
+					
+					System.out.print( cod[y]+" / ");
+					
+				}
+				
+				
+			}
+			
+	
+			for(int z = 0; z<5 ; z++) {
+				
+				if(preco[z]>100) {
+					
+					soma+=preco[z];
+					divisao++;
+					
+				}
+				
+			}
+			
+			System.out.println("\nA média de preço dos produtos acima de R$100,00 é R$" + (soma/divisao) );
+			
+		
+
+	}
+
+}
